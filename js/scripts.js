@@ -21,24 +21,24 @@ Address.prototype.fullAddress = function() {
 $(function() {
 
   $("#add-address").click(function() {
-  $("#new-addresses").append('<div class="new-address">' +
-                               '<div class="form-group">' +
-                                 '<label for="new-street">Street</label>' +
-                                 '<input type="text" class="form-control new-street">' +
-                               '</div>' +
-                               '<div class="form-group">' +
-                                 '<label for="new-city">City</label>' +
-                                 '<input type="text" class="form-control new-city">' +
-                               '</div>' +
-                               '<div class="form-group">' +
-                                 '<label for="new-state">State</label>' +
-                                 '<input type="text" class="form-control new-state">' +
-                               '</div>' +
-                             '</div>');
+    $("#new-addresses").append('<div class="new-address">' +
+                                 '<div class="form-group">' +
+                                   '<label for="new-street">Street</label>' +
+                                   '<input type="text" class="form-control" id="new-street">' +
+                                 '</div>' +
+                                 '<div class="form-group">' +
+                                   '<label for="new-city">City</label>' +
+                                   '<input type="text" class="form-control" id="new-city">' +
+                                 '</div>' +
+                                 '<div class="form-group">' +
+                                   '<label for="new-state">State</label>' +
+                                   '<input type="text" class="form-control" id="new-state">' +
+                                 '</div>' +
+                               '</div>');
 });
 
 
-  $("form#new-contact").submit(function(event) {
+$("form#new-contact").submit(function(event) {
 
       var inputtedFirstName = $("input#new-first-name").val();
       var inputtedLastName = $("input#new-last-name").val();
@@ -50,7 +50,7 @@ $(function() {
       var inputtedState = $(this).find("input#new-state").val();
       var newAddress = new Address(inputtedStreet, inputtedCity, inputtedState);
       newContact.addresses.push(newAddress);
-});
+    });
 
       $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");
 
@@ -59,6 +59,10 @@ $(function() {
         $("#show-contact h2").text(newContact.fullName());
         $(".first-name").text(newContact.firstName);
         $(".last-name").text(newContact.lastName);
+
+  //       $( "p" ).not( document.getElementById( "middle-name" ) )
+  // .css( "background-color", "red" );
+
 
         $("ul#addresses").text("");
         newContact.addresses.forEach(function(address) {
