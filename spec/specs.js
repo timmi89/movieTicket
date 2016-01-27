@@ -1,39 +1,26 @@
-describe('Contact', function() {
+describe("Ticket", function() {
 
-  it("creates a new contact with the given specifications", function() {
-    var testContact = new Contact("Rita","Moreno");
-    expect(testContact.firstName).to.equal("Rita");
-    expect(testContact.lastName).to.equal("Moreno");
-    expect(testContact.addresses).to.eql([]);
+  it("takes the age of a movie-goer", function() {
+    var testTicket = new Ticket(40);
+    expect(testTicket.age).to.equal(40);
+   });
+
+  it("takes the time of day", function() {
+    var testTicket = new Ticket("nightTime");
+    expect(testTicket.time).to.equal("nightTime");
   });
 
-  it("adds the full Name to a contact", function() {
-    var testContact = new Contact("Bill","Clinton");
-    expect(testContact.fullName()).to.equal("Bill Clinton");
+  it("takes the newness of the movie into account", function() {
+    var testTicket = new Ticket("firstRun");
+    expect(testTicket.run).to.equal("firstRun");
   });
+  //   // it ("if age is less than or equal to 0 expect it to return alert('HEY, try to get a little more positive!')", function() {
+  	// 	expect(countUpTo(-3)).to.equal(true);
+
+
+  // it("adds the full Name to a contact", function() {
+  //   var testContact = new Contact("Bill","Clinton");
+  //   expect(testContact.fullName()).to.equal("Bill Clinton");
+  // });
 
 });
-
-describe('Address', function() {
-  it("creates a new address with the given specifications", function() {
-    var testAddress = new Address("123 Main St", "Test City", "Test State");
-    expect(testAddress.street).to.equal("123 Main St");
-    expect(testAddress.city).to.equal("Test City");
-    expect(testAddress.state).to.equal("Test State");
-  });
-
-
-  it("adds the full address[street, city, state] to an address", function() {
-    var testAddress =  new Address("123 Main St", "Test City", "Test State");
-    expect(testAddress.fullAddress()).to.equal("123 Main St, Test City, Test State");
-  });
-});
-
-
-// describe('Address', function() {
-//   it("creates a new address with the given specifications", function() {
-//     var testAddress = new Address("123 Main St", "Test City","Test State");
-//     expect(testAddress.street).to.equal("123 Main St");
-//     expect(testAddress.city).to.equal("Test City");
-//     expect(testAddress.state).to.equal("Test State");
-//   });
